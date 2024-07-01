@@ -84,7 +84,7 @@ def create_profile(request):
             profile.save()
             
         banners = request.FILES.getlist('banners')
-        if banners < 5:
+        if len(banners) < 5:
             for banner in banners:
                     BannersProfile.objects.create(profile=profile, banners=banner)            
             return redirect(reverse('dashboard'))

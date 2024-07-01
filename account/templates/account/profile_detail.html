@@ -64,7 +64,7 @@
         {% else %}
         <button class="btn btn-dark roxo" data-toggle="modal" data-target="#Reavaliacao">Editar Avaliação</button>
         {% endif %}
-        <a href="{{ profile.get_profile_prices_url }}"<button class="btn btn-dark azul">Ver Tabela de Preços</button></a>
+        <a href="{{ profile.get_profile_prices_url }}"><button class="btn btn-dark azul">Ver Tabela de Preços</button></a>
         <br>
         <h5 class="text-dark">
            <a href=""  class="text-dark"></a></h5>
@@ -92,7 +92,7 @@
           <span class="fa fa-star {% if rating.rating >= 4 %} checked {% endif %}"></span>
           <span class="fa fa-star {% if rating.rating >= 5 %} checked {% endif %}"></span> 
           &nbsp; 
-          {{ rating.created }}
+          <p>{{ rating.created }}</p>
         </h5>
         <h6 class="comment-text">{{ rating.comment }}</h6>
         <br>
@@ -113,16 +113,7 @@
       <div class="modal-body">
           <form id="ratingForm" method="POST" action="{% url 'profile_detail' slug=profile.slug %}">
             {% csrf_token %}
-            <div class="alert alert-danger">
-              <strong>Erro:</strong> Por favor, corrija os seguintes erros.
-              <ul>
-                  {% for field, errors in form.errors.items %}
-                  {% for error in errors %}
-                  <li>{{ error }}</li>
-                  {% endfor %}
-                  {% endfor %}
-              </ul>
-              </div>  
+              
             <ul class="btn btn-light list-inline rating-list" id="rating-list-avaliacao">
               <li onclick="setRating(5, 'avaliacao')"><i class="fa fa-star" title="5 Estrelas"></i></li>
               <li onclick="setRating(4, 'avaliacao')"><i class="fa fa-star" title="4 Estrelas"></i></li>
