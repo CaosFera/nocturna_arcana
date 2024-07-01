@@ -1,0 +1,116 @@
+{% extends "base.html" %}
+{% block content %}
+<br>
+<br>
+<div class="container-fluid prole ">
+  <div class="row justify-content-center">
+    <div class="col-xs-12 col-sm-8 col-md-8 p-2">
+      <div class="text-center"> 
+        <img class="img-fluid" src="{{ profile.photo.url }}" alt="{{ profile.title }}">
+      </div>      
+      <div class="profile">
+        <h1 class="text-dark">{{ profile.user }}</h1>
+        <ul class="list-inline">
+            {% if profile.instagram %}
+            <li class="list-inline-item">
+                <a href="{{ profile.instagram }}" target="_blank"> 
+                    <i class="bi bi-instagram instagram-icon"></i>
+                </a>
+            </li>
+            {% endif %}
+            {% if profile.facebook %}
+            <li class="list-inline-item">
+                <a href="{{ profile.facebook }}" target="_blank"> 
+                    <i class="bi bi-facebook facebook-icon"></i>
+                </a>
+            </li>
+            {% endif %}
+            {% if profile.tiktok %}
+            <li class="list-inline-item">
+                <a href="{{ profile.tiktok }}" target="_blank">
+                    <i class="bi bi-tiktok tiktok-icon"></i>
+                </a>
+            </li>
+            {% endif %}
+            {% if profile.telegram %}
+            <li class="list-inline-item">
+                <a href="{{ profile.telegram }}" target="_blank"> 
+                    <i class="bi bi-telegram telegram-icon"></i>
+                </a>
+            </li>
+            {% endif %}
+            {% if profile.whatsapp %}
+            <li class="list-inline-item">
+                <a href="{{ profile.whatsapp }}" target="_blank"> 
+                    <i class="bi bi-whatsapp whatsapp-icon"></i>
+                </a>
+            </li>
+            {% endif %}
+            <li class="list-inline-item">
+              <h5 class="card-title">Avaliação:
+                <span class="fa fa-star {% if profile.average_rating >= 1 %} checked {% endif %}"></span>
+                <span class="fa fa-star {% if profile.average_rating >= 2 %} checked {% endif %}"></span>
+                <span class="fa fa-star {% if profile.average_rating >= 3 %} checked {% endif %}"></span>
+                <span class="fa fa-star {% if profile.average_rating >= 4 %} checked {% endif %}"></span>
+                <span class="fa fa-star {% if profile.average_rating >= 5 %} checked {% endif %}"></span>                
+              </h5>              
+            </li>
+            <li class="list-inline-item">
+                <h4>{{ profile.average_rating |floatformat:1 }} / {{ profile.total_rating }}</h4>
+            </li> 
+        </ul>
+        <p>Os valores são diferentes para cada oraculista</p>
+        <div class="container-fluid">
+            <div class="row">
+              {% for banner in banners %}                
+                 
+                 <div>   
+                    <div>   
+                         <img class=" img-fluid" src="{{ banner.banners.url  }}" alt="{{ post.title }}" >
+                         <br>
+                         <br>
+                    </div>
+                </div>
+                   
+              {% endfor %}
+            </div>
+          </div> 
+        
+            
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!---Avaliação-->
+{% if ratinggs %}
+<div class="container-fluid comment">
+  {% for rating in ratinggs %}
+  <div class="row justify-content-center ">
+    <div class="col-xs-12 col-sm-8 col-md-8 p-2">
+      <div class="avaliacion">
+        <h3>{{ rating.user }}</h3>
+        <h5 class="card-title star">          
+          <span class="fa fa-star {% if rating.rating >= 1 %} checked {% endif %}"></span>
+          <span class="fa fa-star {% if rating.rating >= 2 %} checked {% endif %}"></span>
+          <span class="fa fa-star {% if rating.rating >= 3 %} checked {% endif %}"></span>
+          <span class="fa fa-star {% if rating.rating >= 4 %} checked {% endif %}"></span>
+          <span class="fa fa-star {% if rating.rating >= 5 %} checked {% endif %}"></span> 
+          &nbsp; 
+          {{ rating.created }}
+        </h5>
+        <h6 class="comment-text">{{ rating.comment }}</h6>
+        <br>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endif %}
+
+
+    
+
+{% endblock %}

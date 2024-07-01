@@ -1,0 +1,68 @@
+{% extends "base.html" %} 
+{% block content %}
+ 
+<br>
+{% for item in img %}
+{%  if item.img1 %}
+    <img src="{{ item.img1.url }}" class="img-fluid image_tarot">
+    {% endif %}
+{% endfor %}
+
+<div class="container-fluid text-white">
+    <div class="row">       
+        <div class="col-lg-6 col-sm-12">
+            <br>
+            <h1 class="text-center">Bem-vindo ao Nocturna Arcana</h1>
+            <div class="text-justify">
+                <p>
+                    <h5>
+                        Somos um portal liminar que irá conduzi-lo aos 
+                        mistérios dos reinos ocultos e aos grandes segredos 
+                        do universo. Neste espaço virtual, mergulharemos nas 
+                        profundezas da mente e exploraremos as energias 
+                        ocultas que moldam nossas vidas. No coração do 
+                        Nocturna Arcana está o tarô, uma ferramenta ancestral 
+                        de orientação que nos conecta diretamente ao poder 
+                        ancestral dos arcanos maiores e menores. São símbolos 
+                        antigos que refletem os aspectos mais profundos da 
+                        existência humana. Nosso corpo oracular é composto 
+                        por tarólogos experientes em suas artes, decididos 
+                        a guiar os buscadores da verdade em suas jornadas 
+                        pessoais, seja na área amorosa, financeira, profissional 
+                        ou espiritual. Cada leitura é conduzida de forma única, 
+                        com alto nível de seriedade e precisão. Além do tarô, 
+                        o Nocturna Arcana ainda oferece diversas outras práticas 
+                        esotéricas, que vão desde a astrologia até a magia 
+                        ritualística. Nosso templo virtual é um refúgio para 
+                        os buscadores do verdadeiro conhecimento. Entre e 
+                        deixe-se envolver pela magia dos mistérios ocultos. 
+                        Confie na sabedoria e experiência de nossos especialistas, 
+                        e embarque nesta jornada única de transformação e 
+                        autoconhecimento.
+                    </h5>
+                </p>
+            </div>
+            <div class="text-justify">
+                <p>
+                    <h5>
+                        
+                    </h5>
+                </p>
+            </div>
+        </div>
+       
+       
+    </div>
+</div>
+<br>
+<br>
+<div class="container-fluid text-center">
+    {% for item in img %}
+        {% if item.img3 %}
+             <img src="{{ item.img3.url }}" class="img-fluid image_tarot">
+        {% endif %}   
+    {% endfor %}    
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+{% block content %}
+  {% if query %}
+  <br>
+  <br>
+    <h1 class="text-center text-white">Resultado contendo "{{ query }}"</h1>
+    <h3 class="text-center text-white">
+
+      
+{% with results1|length as count1 %}
+    {% with results2|length as count2 %}
+        {% with results3|length as count3 %}
+            {% with results4|length as count4 %}
+                Encontrado {{ count1|add:count2|add:count3|add:count4 }} resultado{{ count1|add:count2|add:count3|add:count4|pluralize }}
+            {% endwith %}
+        {% endwith %}
+    {% endwith %}
+{% endwith %}
+
+    </h3>
+  <br>
+  <br>
+
+    <section>
+      <div class="container-fluid">
+        <div class="row">
+          {% for post in results1 %}
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-sm-12 col-12 mb-4">
+              <a href="{{ post.get_absolute_url }}" class="card-link text-decoration-none">
+                <div class="card mx-auto">
+                  <img class="card-img-top img-fluid" src="{{ post.image.url }}" alt="{{ post.title }}" style="max-height: 200px; object-fit: cover;">
+                  <div class="card-body">
+                    <h3 class="card-title">{{ post.title |truncatewords:20}}</h3>
+                    <p class="card-text">Categoria: {{ post.category }}</p>
+                    <p class="card-text">By: {{ post.user_post }}</p>
+                    <p class="card-text"><small class="text-muted">{{ post.created }}</small></p>
+                  </div>
+                </div>
+              </a>
+            </div>
+          {% endfor %}      
+    
+          {% for major in results2 %}  
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-sm-12 col-12 mb-4">
+              <a href="{{ major.get_absolute_url }}" class="card-link text-decoration-none">
+                <div class="card mx-auto">
+                  <div style="position: relative;">
+                    <img class="card-img-top img-fluid" src="{{ major.image_major.url }}" alt="{{ major.title }}" style="object-fit: cover; width: 100%; height: 100%;">
+                    <div class="card-body" style="position: absolute; bottom: 0; left: 0; right: 0; background-color: white;">
+                      <h4 class="card-title mb-0 text-center">{{ major.name_major_arcana }}</h4>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          {% endfor %}
+
+          {% for minor in results3 %}  
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-sm-12 col-12 mb-4">
+              <a href="{{ minor.get_absolute_url }}" class="card-link text-decoration-none">
+                <div class="card mx-auto">
+                  <div style="position: relative;">
+                    <img class="card-img-top img-fluid" src="{{ minor.image_minor.url }}" alt="{{ major.title }}" style="object-fit: cover; width: 100%; height: 100%;">
+                    <div class="card-body" style="position: absolute; bottom: 0; left: 0; right: 0; background-color: white;">
+                      <h4 class="card-title mb-0 text-center">{{ minor.name_minor_arcana}}</h4>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          {% endfor %}
+
+          {% for corte in results4 %}  
+            <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-sm-12 col-12 mb-4">
+              <a href="{{ corte.get_absolute_url }}" class="card-link text-decoration-none">
+                <div class="card mx-auto">
+                  <div style="position: relative;">
+                    <img class="card-img-top img-fluid" src="{{ corte.image_corte.url }}" alt="{{ major.title }}" style="object-fit: cover; width: 100%; height: 100%;">
+                    <div class="card-body" style="position: absolute; bottom: 0; left: 0; right: 0; background-color: white;">
+                      <h4 class="card-title mb-0 text-center">{{corte.name_corte}}</h4>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </div>
+          {% endfor %}
+
+        </div>
+      </div>
+    </section>
+    
+  {% endif %}
+{% endblock %}

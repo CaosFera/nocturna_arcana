@@ -1,0 +1,27 @@
+
+
+
+
+<nav class="navbar navbar-expand-sm navbar-dark bg-black">
+    <div class="container-fluid">      
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mnavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="mnavbar">
+        <ul class="navbar-nav me-auto ml-3">
+            <li class="nav-item">
+            <a class="nav-link custom-nav" href="{% url 'cards:tarot_history' %}">História do Tarot</a>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link custom-nav" href="{% url 'cards:major_arcana_home' %}">Arcanos Maiores</a>
+          </li>
+                
+          <li class="nav-item">
+            <a class="nav-link custom-nav" href="{% url 'cards:minor_arcana_home' %}">Arcanos Menores</a>
+          </li>         
+              
+        </ul>                                  
+      </div>
+    </div>
+  </nav>
+  

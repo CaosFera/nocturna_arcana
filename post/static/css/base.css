@@ -1,0 +1,220 @@
+body, .custom-btn
+{
+    background-color: #4B0082;
+    font-family: 'Imbue', sans-serif;
+    
+}
+
+.custom-nav, .custom-btn
+{
+    font-family: 'Imbue', sans-serif;
+    font-size: 1.2em;
+    
+}
+
+.navbar-nav .nav-item .nav-link.custom-nav:hover
+{
+    color: #9370DB !important;
+}
+
+.navbar-nav .nav-link
+{
+  color: white !important; 
+}
+
+.card 
+{
+    width: 220px;
+    height: 400px;
+}
+
+
+.purple-text .page-link 
+{
+    color: purple; 
+}
+  
+  .white-bg .page-item 
+{
+    background-color: white; 
+}
+  
+/* Estilos para a lista de mensagens */
+.messages {
+    list-style-type: none; /* Remove os marcadores de lista */
+    padding: 10px; /* Adiciona um espaçamento interno à lista */
+    border: 2px solid green; /* Adiciona uma borda verde à lista */
+  }
+  
+  /* Estilos para cada mensagem individual */
+  .messages li {
+    margin-bottom: 10px; /* Adiciona um espaçamento entre cada mensagem */
+  }
+  
+  /* Estilos para o botão de fechar */
+  .messages .close {
+    float: right; /* Alinha o botão à direita */
+    color: red; /* Define a cor do botão como vermelho */
+    text-decoration: none; /* Remove a decoração do texto */
+  }
+  .roxo
+  {
+    background-color: #4B0082;
+
+  } 
+  .azul
+  {
+    background-color: #2908d1;
+
+  } 
+  .addcoment
+  {
+    background-color: #008000;
+  }
+
+  .excluir
+  {
+    background-color: #8B0000;
+  }
+  .editar
+  {
+    background-color: #FF8C00;
+    
+  }
+  .cancelar
+  {
+    background-color: #696969;
+  }
+  .esqueceu
+  {
+    color: #4B0082;
+    font-weight: bold;
+  }
+.image_tarot
+{
+  border: 5px solid #000000;
+}
+
+  
+.instagram-icon 
+{
+  color: #8a3ab9; 
+}
+
+.facebook-icon
+{
+  color: #3b5998; 
+}
+
+.tiktok-icon 
+{
+  color: #000; 
+}
+
+.telegram-icon 
+{
+  color: #0088cc; 
+}
+
+.whatsapp-icon 
+{
+  color: #25D366; 
+}
+.instagram-icon,
+.facebook-icon,
+.tiktok-icon,
+.telegram-icon,
+.whatsapp-icon
+{
+    font-size: 24px;
+}
+
+.text-justify 
+{
+  text-align: justify;
+
+}
+
+
+.text-container {
+  text-align: justify; 
+  
+}
+
+
+.recuo-primeira-linha {
+  text-indent: 11px; /* Defina o valor desejado de recuo */
+}
+.recuo {
+  display: inline-block; /* Garante que a tag span ocupe apenas o espaço necessário */
+  margin-left: 20px; /* Define o recuo desejado */
+}
+
+#page-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+#content-wrap {
+  padding-bottom: 2.5rem;    /* altura do rodapé */
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 12rem; 
+  background-color: #000000 
+  
+}
+
+.rating-list li {
+  display: inline-block;
+}
+.rating-list li 
+{
+  float: right;
+  color: #000000;
+  padding: 10px 5px;
+}
+
+.rating-list li:hover,
+.rating-list li:hover ~ li
+ {
+  color: #FFD700;
+}
+
+.rating-list {
+  display: inline-block;
+  list-style: none;
+}
+.checked {
+    color: #FFD700;
+}
+.avaliacion
+{
+  background-color:#ffff
+  
+}
+.profile
+{
+  
+ background-color: white; padding: 15px;
+ 
+}
+.prole
+{
+  justify-content: center;
+  width: 100%;
+}
+.comment-text, .star
+{
+  text-justify: auto;
+  text-indent: 10px;
+}
+
+.i 
+{
+  font-size: 2rem; /* Altere o valor conforme necessário */
+  color: green; /* Cor verde para o ícone */
+}

@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% block content %}
+{% include "cards/menu_tarot.html" %}
+<br>
+<br>
+<h1 class="text-white text-center">{{ major.name_major_arcana }}</h1>
+<br>
+<br>     
+
+
+    <div class="row">
+         <div class="text-center col-sm-12"> 
+            <img class="img-fluid major " src="{{ major.image_major.url }}" >
+        </div>
+    </div>
+
+    <div class="row mx-0">
+        <div class="col-sm-12 bg-white">
+            <h5>Palavras Chave:</h5>
+            {% for tag in major.key_word_major.all %}
+            {{ tag }}<br>
+            {% endfor %}
+            <p class="text-dark text-center">{{ major.description|safe }}</p>
+        </div>
+    </div>
+
+
+{% endblock %}

@@ -1,0 +1,180 @@
+@media screen and (min-width: 768px) and (max-width: 1400px)
+{
+    .text-container 
+    {
+        column-count: 2;
+        column-gap: 30px; 
+    }
+    .major
+    {
+      float: left ;
+      margin-left: 0px;
+    }
+    
+
+}
+
+
+@media screen and (width: 768px) and (height: 1024px)
+{  
+
+    .listcortes, .listminor
+    {
+      position: absolute;
+        top: 505px;
+        right: 30%;      
+    }
+    .contribuir
+    {
+      margin-top: 15%;
+    }
+}
+
+@media screen and (width: 853px) and (height: 1280px)
+{  
+    .listcortes, .listminor
+    {
+      position: absolute;
+        top: 525px;
+        right: 30%;      
+    }
+    .contribuir
+    {
+      margin-top: 25%;
+    }
+}
+
+@media screen and (width: 820px) and (height: 1180px)
+{  
+
+    .listcortes, .listminor
+    {
+      position: absolute;
+        top: 515px;
+        right: 30%;      
+    }
+    .contribuir
+    {
+      margin-top: 20%;
+    }
+}
+
+@media screen and (width: 912px) and (height: 1368px)
+{  
+    .listcortes, .listminor
+    {
+      position: absolute;
+        top: 540px;
+        right: 30%;      
+    }
+    .contribuir
+    {
+      margin-top: 25%;
+    }
+}
+@media screen and (width: 1024px) and (height: 1366px)
+{  
+    .listcortes, .listminor
+    {
+      position: absolute;
+        top: 570px;
+        right: 30%;      
+    }
+    .contribuir
+    {
+      margin-top: 25%;
+    }
+}
+@media screen and (width: 1024px) and (height: 600px)
+{  
+    .listcortes, .listminor
+    {
+      position: absolute;
+        top: 570px;
+        right: 30%;      
+    }
+
+}
+
+@media screen and (width: 1280px) and (height: 800px)
+{  
+    .listcortes, .listminor
+    {
+      position: absolute;
+        top: 570px;
+        right: 30%;      
+    }
+
+}
+@media screen and (width: 882px) and (height: 344px)
+{  
+    .listcortes
+    {
+      position: absolute;
+        top: 535px;
+        right: 30%;      
+    }
+
+}
+@media screen and (width: 1280px) and (height: 853px)
+{  
+    .listcortes, .listminor
+    {
+      position: absolute;
+        top: 575px;
+        right: 35%;      
+    }
+
+}
+
+@media screen and (min-width: 1000px) and (max-width: 2000px) {
+  .listcortes , .listminor
+  {
+      position: absolute;
+      top: 575px;
+      right: 250px;
+  }
+}
+
+
+@media screen and (width: 540px) and (height: 720px)
+{  
+  .contribuir
+  {
+    position: absolute;
+    top: 200px;
+  }
+}
+
+
+
+
+
+
+
+
+
+/* Para telas pequenas */
+@media screen and (max-width: 767px) 
+{
+    .text-container
+    {
+        width: 100%; /* Ocupar toda a largura do grid */
+    }
+    .major
+    {
+      width: 100%; /* Ocupar toda a largura do grid */
+      
+    }
+    .listminor, .listcortes
+    {
+      
+       margin-top: 10%;
+      
+    }
+    .contribuir
+    {
+      margin-top: 10%;
+    }
+    
+}

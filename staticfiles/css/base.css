@@ -1,0 +1,17 @@
+body, .custom-btn
+{
+    background-color: #4B0082;
+    font-family: 'Imbue', sans-serif;
+    
+}
+
+.custom-nav, .custom-btn
+{
+    font-family: 'Imbue', sans-serif;
+    font-size: 1.2em;
+    
+}
+.navbar-nav .nav-item .nav-link.custom-nav:hover
+ {
+    color: #9370DB !important;
+}

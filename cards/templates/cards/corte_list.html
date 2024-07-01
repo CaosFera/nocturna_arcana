@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block content %}
+
+<br>
+<br>
+<br>
+<h1 class="text-center text-white">Arcanos da Realeza</h1>
+<br>
+<br>
+<br>
+<section>
+    <div class="container-fluid">
+      <div class="row">
+        {% for corte in page_obj %}  
+          <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-sm-12 col-12 mb-4">
+            <a href="{{ corte.get_absolute_url }}" class="card-link text-decoration-none">
+              <div class="card mx-auto">
+                <div style="position: relative;">
+                  <img class="card-img-top img-fluid" src="{{ corte.image_corte.url }}" alt="{{ major.title }}" style="object-fit: cover; width: 100%; height: 100%;">
+                  <div class="card-body" style="position: absolute; bottom: 0; left: 0; right: 0; background-color: white;">
+                    <h4 class="card-title mb-0 text-center">{{ corte.name_corte }}</h4>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+  
+
+<br>
+<br>
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center purple-text white-bg"> 
+    <li class="page-item {% if not page_obj.has_previous %} disabled {% endif %}">
+      <a class="page-link" href="{% if page_obj.has_previous %}?page={{ page_obj.previous_page_number }}{% endif %}" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+        <span class="sr-only">Previous</span>
+      </a>
+    </li>
+    {% for num in page_obj.paginator.page_range %}
+    <li class="page-item {% if num == page_obj.number %} active {% endif %}">
+      <a class="page-link" href="?page={{ num }}">{{ num }}</a>
+    </li>
+    {% endfor %}
+    <li class="page-item {% if not page_obj.has_next %} disabled {% endif %}">
+      <a class="page-link" href="{% if page_obj.has_next %}?page={{ page_obj.next_page_number }}{% endif %}" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+        <span class="sr-only">Next</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+
+{% endblock %}

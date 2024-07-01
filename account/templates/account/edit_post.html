@@ -1,0 +1,114 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+{% include "account/profile_menu.html" %}
+
+<h1 class="text-white text-center">Editar Postagem</h1>
+
+<div class="container-fluid">
+    <div class="row justify-content-center mt-5 p-5">
+        <div class="col-md-8 col-lg-6 col-sm-10 border rounded-3 bg-white">
+          <form method="post" action="{% url 'edit_post' post.created.year post.created.month post.created.day post.id post.slug %}
+          " enctype="multipart/form-data">
+            {% csrf_token %}
+                
+                <!-- Categoria -->
+                <div class="form-group row">
+                  <label for="category" class="col-md-4"><h4>Categoria:</h4></label>
+                  <ul class="list-unstyled">
+                    <li><i class="bi bi-plus i" data-toggle="modal" data-target="#myModal"></i></li>                  
+                 <li>             
+                  <div class="col-md-6">
+                    <select name="category" id="category" class="form-control">
+                      <option value="" disabled>Selecione uma categoria</option>
+                      {% for category in form.category.field.queryset %}
+                          <option value="{{ category.pk }}" {% if category == form.instance.category %}selected{% endif %}>{{ category.name }}</option>
+                      {% endfor %}
+                  </select>
+                  
+                  </div>
+              </div>
+            </li>
+            </ul>
+                <br>
+                <!-- Título -->
+                <div class="form-group">
+                  <label for="title"><h4>Titulo:</h4></label>
+                  <input type="text" class="form-control" id="title" name="title" value="{{ form.title.value|default_if_none:'' }}">
+              </div>
+              
+                
+                <!-- Conteúdo da Postagem -->
+                <div class="form-group">
+                    <label for="body_post">Conteúdo da postagem:</label>
+                    {{ form.media }}
+                    {{ form.body_post }}
+                </div>
+                
+                <!-- Imagem -->                
+                <div class="form-group">
+                  <label for="image"><h4>* Imagem:</h4></label>
+                  <img src="{{ form.instance.image.url }}" id="current-image" alt="image de post" style="max-width: 50px;">
+                  <input type="file" class="form-control-file" id="image" name="image" onchange="previewImage(this)">
+              </div>
+              
+                <!-- Botão Enviar -->
+                <br>
+                <div class="d-flex justify-content-between">
+                    <button type="submit" class="btn btn-primary loging col-12">Salvar Alterações</button>
+                </div>
+                <br>
+            </form>
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="myModalLabel">Criar Categoria</h5>
+       
+      </div>
+      <div class="modal-body">
+        <!-- Formulário -->
+        <form id="categoryForm" method="POST" action="{% url 'create_category' %}">
+          {% csrf_token %}
+          <div class="form-group">
+            <label for="name">Categoria:</label>
+            <input type="text" class="form-control" id="name" name="name">
+          </div>
+                <br>
+                <div class="d-flex justify-content-between">
+                    <button type="submit" class="btn btn-dark roxo col-6">Salvar</button>
+                    <button type="button" class="btn btn-dark azul col-6" data-dismiss="modal">Cancelar</button>
+                </div>
+                <br>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function previewImage(input) 
+  {
+      var currentPhoto = document.getElementById('current-image');
+      if (input.files && input.files[0])
+      {
+          var reader = new FileReader();
+          reader.onload = function(e) 
+          {
+              currentPhoto.src = e.target.result;
+          }
+          reader.readAsDataURL(input.files[0]);
+      }
+      else
+      {
+          currentPhoto.src = '{{ form.instance.image.url }}';
+      }
+  }
+</script>
+
+{% endblock %}

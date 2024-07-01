@@ -1,0 +1,95 @@
+{% extends "base.html" %}
+{% block content %}
+{% include "cards/menu_tarot.html" %}
+<br>
+<br>
+<br>
+
+ 
+  <br>
+  <br>
+  <br>
+    <h1 class="text-white text-center">{{ tarot.title }}</h1>
+    <p class="text-center text-white">(Texto extraído do livro TARÔ Dicionário & Compêndio - Jana Riley)</p>
+    
+    <br>
+  <br>
+  <br>
+  <div class="text-center">
+    <img class="img-fluid image_tarot text-center"  src="{{ tarot.image_tarot.url }}" style="max-width: 400px; max-height: 400px;">
+</div>
+
+
+<br>
+    <br>
+        <div class=" text-container text-justify container-fluid text-white">
+                     
+                 <h4>
+                  Os <a href="{% url 'cards:major_arcana_list' %}" class="text-decoration-none" style="color: yellow;">Arcanos Maiores</a> consistem de 22 cartas que representam os
+                  principais arquétipos. É provável que 22 não seja um número mais
+                  definitivo para arquétipos do que qualquer outro, uma vez que
+                  antigas culturas e religiões, juntamente com as mais modernas,
+                  tendem a englobar literalmente centenas de arquétipos, como faz o
+                  hinduísmo com sua legião volumosa de deuses maiores e menores,
+                  e o catolicismo com sua hierarquia celestial de várias centenas de
+                  serafins, querubins, tronos, domínios, virtudes, poderes,
+                  principados, arcanjos e anjos. No entanto, no Tarô, os <a href="{% url 'cards:major_arcana_list' %}" class="text-decoration-none" style="color: yellow;">Arcanos Maiores</a> são aqueles arquétipos mais eminentemente ligados ao
+                  inconsciente coletivo da humanidade e, como tal, possuem uma
+                  aplicação universal independente de raça, religião ou credo da
+                  pessoa. Visto de um outro ponto do espectro numérico, pode-se
+                  também dizer que os Maiores consistem de apenas dois arquétipos
+                  — sendo eles a polaridade terra-céu de yin e yang, positivo e
+                  negativo, ou masculino e feminino — expressos em 22 de seus
+                  aspectos ou estágios complementares. Como resultado, a maioria
+                  das cartas dos <a href="{% url 'cards:major_arcana_list' %}" class="text-decoration-none" style="color: yellow;">Arcanos Maiores</a> mostram apenas um homem ou
+                  uma mulher, ou um homem e uma mulher juntos. Porém, se
+                  estivermos dispostos a ir além, esses dois arquétipos podem
+                  também ser reduzidos a apenas um que, como já dissemos, é o Um,
+                  o Todo simples e indivisível, percebido por nós como yin e yang no
+                  plano Terrestre. O Um é representado pelo Louco. Por essa razão é
+                  que o Louco recebe o número 0, e pode ser colocado tanto no
+                  começo quanto no fim dos <a href="{% url 'cards:major_arcana_list' %}" class="text-decoration-none" style="color: yellow;">Arcanos Maiores</a>.                  
+                  O Tarô, por representar a cosmologia, é um trampolim para o
+                  infinito e para o eterno. Não há fim para ele, e essa é a razão pela
+                  qual os tarólogos falaram e escreveram muito sobre isso em geral                  
+                  e sobre cada arquétipo em especial. Ao fazer uma leitura, a inter-
+                  pretação dependerá de para quem se está lendo, o sentido de uma                  
+                  carta específica, sua relação com outras cartas, a posição de cada
+                  carta no sistema, o objetivo a ser alcançado e, para muitos leitores,
+                  se a figura da carta está virada para cima ou para baixo.
+                  Acrescente a isso as possibilidades genéricas contidas no
+                  macrocosmo do Tarô em si e em cada carta individualmente, e
+                  teremos material suficiente para durar não uma vida inteira, mas
+                  inúmeras vidas. Por essa razão, nas interpretações que se seguem,
+                  em vez de mencionarem as possibilidades múltiplas naturalmente
+                  inerentes em um arquétipo, um ou dois atributos são
+                  mencionados. Tentei evitar cobrir território demais. Em vez disso,
+                  escolhi definições breves, embora incompletas, para que os
+                  leitores possam ter uma idéia básica de cada autor.
+                  Os <a href="{% url 'cards:major_arcana_list' %}" class="text-decoration-none" style="color: yellow;">Arcanos Maiores</a> são numerados de 0 a 21. Ninguém tem
+                  certeza absoluta de que a ordem na qual estão numerados hoje
+                  seja a seqüência correta ou original, mas exceto pelo Arcano VIII
+                  — A Justiça, e o Arcano XI — A Força, um consenso foi atingido
+                  na ordem da presente numeração conforme estabelecida pela
+                  Aurora Dourada durante a primeira parte do século XX. Algumas
+                  autoridades acreditam, com evidência eficaz para apoiá-las, que A
+                  Força e A Justiça seriam intercambiáveis, tornado A Força
+                  Número VIII e A Justiça Número XI. Os atuais baralhos de Tarô
+                  variam porque a ordem dessas duas cartas não foi ainda
+                  satisfatoriamente determinada.             
+                 </h4>         
+            
+    </div> 
+        
+
+
+  <nav>
+    <ul class="b" >
+      {% for major in majors %} 
+      <a href="{{ major.get_absolute_url }}" class="text-decoration-none"><li style="color: yellow;"><h4 >{{ major.name_major_arcana }}</h4></li></a>
+      {% endfor %}
+    </ul>
+  </nav>
+ 
+         
+{% endblock %}

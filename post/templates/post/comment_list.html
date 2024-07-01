@@ -1,0 +1,92 @@
+<div class="container-fluid">
+  <div class="row">
+      <div class="col-md-8 offset-md-2">
+        <h2 class="text-white">Lista de Comentários:</h2>
+          <hr>
+          {% if comments %}
+              {% for comment in comments %}
+                  <div class="card mb-3">
+                      <div class="card-header">
+                          {{ comment.user_comment }}
+                          <p class="card-text"><small class="text-muted">{{ comment.created }}</small></p>
+                      </div>
+                      <div class="card-body overflow-auto"> <!-- Adicionando a classe overflow-auto -->
+                          <p class="card-text">{{ comment.body_comment }}</p>
+
+                        </div>
+                          {% if request.user == comment.user_comment %}
+                          <div class="d-flex justify-content-end mt-2">
+                            <!-- Botão para abrir o modal editar -->
+                            <button type="button" class="btn btn-dark btn-sm me-2 editar" data-toggle="modal" data-target="#editar{{ comment.id }}">
+                              Editar
+                            </button>
+                            <!-- Botão para abrir o modal excluir -->
+                            <button type="button" class="btn btn-dark btn-sm excluir" data-toggle="modal" data-target="#confirmDelete{{ comment.id }}">
+                              Excluir
+                            </button>
+                          </div><!-- Modal excluir -->
+                              <div class="modal fade" id="confirmDelete{{ comment.id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                  <div class="modal-dialog" role="document">
+                                      <div class="modal-content">
+                                          <div class="modal-header">
+                                              <h5 class="modal-title" id="exampleModalLabel">Confirmar Exclusão</h5>                                             
+                                          </div>
+                                          <div class="modal-body">
+                                              Tem certeza de que deseja excluir este comentário?
+                                          </div>
+                                          <div class="modal-footer">
+                                              <button type="button" class="btn btn-dark cancelar" data-dismiss="modal">Cancelar</button>
+                                              <!-- Formulário de exclusão -->
+                                              <form method="POST" action="{% url 'post:comment_delete' post_id=comment.post_comment.id comment_id=comment.id %}">
+                                                  {% csrf_token %}
+                                                  <button type="submit" class="btn btn-dark excluir">Excluir</button>
+                                              </form>
+                                          </div>
+                                      </div>
+                                  </div>
+                        </div>                             
+                              <!-- Modal editar -->
+                              <div class="modal fade" id="editar{{ comment.id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                  <div class="modal-dialog" role="document">
+                                      <div class="modal-content">
+                                          <div class="modal-header">
+                                              <h5 class="modal-title" id="exampleModalLabel">Editar Comentário</h5>
+                                          </div>
+                                          <div class="modal-body">
+                                              <form id="comment-form" action="{% url 'post:comment_edit' post_id=comment.post_comment.id comment_id=comment.id   %}" method="post">
+                                                  {% csrf_token %}
+                                                  <div class="form-group">
+                                                      <label for="body_comment">Comentário:</label>
+                                                      <textarea class="form-control" id="body_comment" name="body_comment" rows="3" required>{{ comment.body_comment }}</textarea>
+                                                  </div>
+                                                  <div class="modal-footer">
+                                                      <button type="submit" class="btn btn-dark addcoment">Salvar</button>
+                                                      <button type="button" class="btn btn-dark cancelar" data-dismiss="modal">Cancelar</button>
+                                                  </div>
+                                              </form>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                            {% endif %}                            
+
+                      </div>
+                 
+              {% endfor %}
+          {% else %}
+              <p class="text-white">Nenhum comentário encontrado.</p>
+          {% endif %}
+      </div>
+  </div>
+</div>
+
+<style>
+  .card 
+  {
+    width: 100%;
+   
+  }
+
+
+</style>
+

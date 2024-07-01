@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% block content %}
+
+<br>
+<br>
+<br>
+<h1 class="text-center text-white">Agende sua Consulta</h1>
+<br>
+<br>
+<br>
+ <section>
+  <div class="container-fluid">
+    <div class="row">
+      {% for profile in profiles %}  
+        <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-sm-12 col-12 mb-4">
+          <a href="{{ profile.get_absolute_url }}" class="card-link text-decoration-none">
+            <div class="card mx-auto">
+              <img class="card-img-top img-fluid" src="{{ profile.photo.url  }}" alt="{{ post.title }}" style="max-height: 200px; object-fit: cover;">
+              <div class="card-body">
+                <h4 class="card-title">{{ profile.user }}</h4> 
+                <ul class="list-inline">
+                    {% if profile.instagram %}
+                    <li class="list-inline-item">
+                        <a href="{{ profile.instagram }}" target="_blank"> 
+                            <i class="bi bi-instagram instagram-icon"></i>
+                        </a>
+                    </li>
+                    {% endif %}
+                    {% if profile.facebook %}
+                    <li class="list-inline-item">
+                        <a href="{{ profile.facebook }}" target="_blank"> 
+                            <i class="bi bi-facebook facebook-icon"></i>
+                        </a>
+                    </li>
+                    {% endif %}
+                    {% if profile.tiktok %}
+                    <li class="list-inline-item">
+                        <a href="{{ profile.tiktok }}" target="_blank">
+                            <i class="bi bi-tiktok tiktok-icon"></i>
+                        </a>
+                    </li>
+                    {% endif %}
+                    {% if profile.telegram %}
+                    <li class="list-inline-item">
+                        <a href="{{ profile.telegram }}" target="_blank"> 
+                            <i class="bi bi-telegram telegram-icon"></i>
+                        </a>
+                    </li>
+                    {% endif %}
+                    {% if profile.whatsapp %}
+                    <li class="list-inline-item">
+                        <a href="{{ profile.whatsapp }}" target="_blank"> 
+                            <i class="bi bi-whatsapp whatsapp-icon"></i>
+                        </a>
+                    </li>
+                    {% endif %}
+                </ul> 
+                <h6 class="card-title">Avaliação:
+                  <span class="fa fa-star {% if profile.average_rating >= 1 %} checked {% endif %}"></span>
+                  <span class="fa fa-star {% if profile.average_rating >= 2 %} checked {% endif %}"></span>
+                  <span class="fa fa-star {% if profile.average_rating >= 3 %} checked {% endif %}"></span>
+                  <span class="fa fa-star {% if profile.average_rating >= 4 %} checked {% endif %}"></span>
+                  <span class="fa fa-star {% if profile.average_rating >= 5 %} checked {% endif %}"></span>
+                  &nbsp;
+                  &nbsp;
+                  {{ profile.average_rating |floatformat:1  }} / {{ profile.total_rating }}
+                </h6>
+                
+                  
+                               
+              </div>
+            </div>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+  </div> 
+
+
+
+{% endblock %}

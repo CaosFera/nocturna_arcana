@@ -1,0 +1,29 @@
+
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <h2 class="text-white">Adicionar Comentário</h2>
+      <form id="comment-form" action="{% url 'post:post_comment' post.id %}" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="body_comment"></label>
+          <textarea class="form-control" id="body_comment" name="body_comment" rows="3" required></textarea>
+          <br>
+        </div>
+        <button type="submit" class="btn btn-dark addcoment col-12 ">Adicionar Comentário</button>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('body_comment').addEventListener('keypress', function(event) {
+        if (event.keyCode === 13 && !event.shiftKey) {  // Se a tecla pressionada for Enter e não houver Shift pressionado
+            event.preventDefault();  // Evita que o formulário seja submetido
+            document.getElementById('comment-form').submit();  // Submete o formulário
+        }
+    });
+});
+</script>

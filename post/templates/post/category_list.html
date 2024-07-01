@@ -1,0 +1,23 @@
+{% extends "base.html" %} 
+{% block content %}
+
+<br>
+<br>
+   <div class="container-fluid text-white">
+       <h1 class="text-center">Categorias</h1>
+       <nav>
+          <ul>
+            {% for category in categorys %}
+              <li>
+                  <a href="{{ category.get_absolute_url }}" >
+                    <h1>
+                    {{ category.name }}
+                    </h1>
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+       </nav>
+       
+   </div>
+{% endblock %}

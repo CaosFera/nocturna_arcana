@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block content %}
+<br>
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <div class="text-center"> 
+        <img class="img-fluid" src="{{ post.image.url }}" alt="{{ post.title }}">
+      </div>      
+      <div style="background-color: white; padding: 15px;">
+        <h1 class="text-dark text-center">{{ post.title }}</h1>
+        <br>
+        <h5 class="text-dark">Categoria:
+           <a href="{% url 'post:post_category' category_id=post.category.id %}"  class="text-dark">{{ post.category }}</a></h5>
+        <a href="{{ post.user_post.profile.get_absolute_url }}"><p class="text-dark">Por: {{ post.user_post }}</p> </a>    
+        <p>{{ post.body_post | safe }}</p>
+        <p><small class="text-muted"><span class="text-dark">{{ post.created }}</span></small></p>
+      </div>
+    </div>
+  </div>
+{% include "post/comment_form.html" %}
+<br>
+<br>
+{% include "post/comment_list.html" %}
+</div>
+{% endblock %}

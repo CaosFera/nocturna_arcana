@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Bem-vindo{% endblock %}
+
+{% block content %}
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="card">
+          <div class="card-header">
+            <h1 class="card-title">Bem-vindo(a) {{ new_user.first_name }}!</h1>
+          </div>
+          <div class="card-body">
+            <p class="card-text">
+              Sua conta foi criada com sucesso.
+              Agora você pode <a href="{% url "login" %}" class="btn btn-primary">fazer login</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

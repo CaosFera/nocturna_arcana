@@ -1,0 +1,208 @@
+{% extends "base.html" %}
+{% block content %}
+<br>
+<br>
+<div class="container-fluid prole ">
+  <div class="row justify-content-center">
+    <div class="col-xs-12 col-sm-8 col-md-8 p-2">
+      <div class="text-center"> 
+        <img class="img-fluid" src="{{ profile.photo.url }}" alt="{{ profile.title }}">
+      </div>      
+      <div class="profile">
+        <h1 class="text-dark">{{ profile.user }}</h1>
+        <ul class="list-inline">
+            {% if profile.instagram %}
+            <li class="list-inline-item">
+                <a href="{{ profile.instagram }}" target="_blank"> 
+                    <i class="bi bi-instagram instagram-icon"></i>
+                </a>
+            </li>
+            {% endif %}
+            {% if profile.facebook %}
+            <li class="list-inline-item">
+                <a href="{{ profile.facebook }}" target="_blank"> 
+                    <i class="bi bi-facebook facebook-icon"></i>
+                </a>
+            </li>
+            {% endif %}
+            {% if profile.tiktok %}
+            <li class="list-inline-item">
+                <a href="{{ profile.tiktok }}" target="_blank">
+                    <i class="bi bi-tiktok tiktok-icon"></i>
+                </a>
+            </li>
+            {% endif %}
+            {% if profile.telegram %}
+            <li class="list-inline-item">
+                <a href="{{ profile.telegram }}" target="_blank"> 
+                    <i class="bi bi-telegram telegram-icon"></i>
+                </a>
+            </li>
+            {% endif %}
+            {% if profile.whatsapp %}
+            <li class="list-inline-item">
+                <a href="{{ profile.whatsapp }}" target="_blank"> 
+                    <i class="bi bi-whatsapp whatsapp-icon"></i>
+                </a>
+            </li>
+            {% endif %}
+            <li class="list-inline-item">
+              <h5 class="card-title">Avaliação:
+                <span class="fa fa-star {% if profile.average_rating >= 1 %} checked {% endif %}"></span>
+                <span class="fa fa-star {% if profile.average_rating >= 2 %} checked {% endif %}"></span>
+                <span class="fa fa-star {% if profile.average_rating >= 3 %} checked {% endif %}"></span>
+                <span class="fa fa-star {% if profile.average_rating >= 4 %} checked {% endif %}"></span>
+                <span class="fa fa-star {% if profile.average_rating >= 5 %} checked {% endif %}"></span>                
+              </h5>              
+            </li>
+            <li class="list-inline-item">
+                <h4>{{ profile.average_rating |floatformat:1 }} / {{ profile.total_rating }}</h4>
+            </li> 
+        </ul>        
+        {% if not exists %}
+        <button class="btn btn-dark roxo" data-toggle="modal" data-target="#Avaliacao">Avaliar</button>
+        {% else %}
+        <button class="btn btn-dark roxo" data-toggle="modal" data-target="#Reavaliacao">Editar Avaliação</button>
+        {% endif %}
+        <a href="{{ profile.get_profile_prices_url }}"<button class="btn btn-dark azul">Ver Tabela de Preços</button></a>
+        <br>
+        <h5 class="text-dark">
+           <a href=""  class="text-dark"></a></h5>
+            
+        <p>{{ profile.biographia | safe }}</p>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!---Avaliação-->
+{% if ratinggs %}
+<div class="container-fluid comment">
+  {% for rating in ratinggs %}
+  <div class="row justify-content-center ">
+    <div class="col-xs-12 col-sm-8 col-md-8 p-2">
+      <div class="avaliacion">
+        <h3>{{ rating.user }}</h3>
+        <h5 class="card-title star">          
+          <span class="fa fa-star {% if rating.rating >= 1 %} checked {% endif %}"></span>
+          <span class="fa fa-star {% if rating.rating >= 2 %} checked {% endif %}"></span>
+          <span class="fa fa-star {% if rating.rating >= 3 %} checked {% endif %}"></span>
+          <span class="fa fa-star {% if rating.rating >= 4 %} checked {% endif %}"></span>
+          <span class="fa fa-star {% if rating.rating >= 5 %} checked {% endif %}"></span> 
+          &nbsp; 
+          {{ rating.created }}
+        </h5>
+        <h6 class="comment-text">{{ rating.comment }}</h6>
+        <br>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+{% endif %}
+
+<!-- Modal Avaliação-->
+<div class="modal fade" id="Avaliacao" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="myModalLabel">Adicionar Avaliação</h5>
+      </div>
+      <div class="modal-body">
+          <form id="ratingForm" method="POST" action="{% url 'profile_detail' slug=profile.slug %}">
+            {% csrf_token %}
+            <div class="alert alert-danger">
+              <strong>Erro:</strong> Por favor, corrija os seguintes erros.
+              <ul>
+                  {% for field, errors in form.errors.items %}
+                  {% for error in errors %}
+                  <li>{{ error }}</li>
+                  {% endfor %}
+                  {% endfor %}
+              </ul>
+              </div>  
+            <ul class="btn btn-light list-inline rating-list" id="rating-list-avaliacao">
+              <li onclick="setRating(5, 'avaliacao')"><i class="fa fa-star" title="5 Estrelas"></i></li>
+              <li onclick="setRating(4, 'avaliacao')"><i class="fa fa-star" title="4 Estrelas"></i></li>
+              <li onclick="setRating(3, 'avaliacao')"><i class="fa fa-star" title="3 Estrelas"></i></li>
+              <li onclick="setRating(2, 'avaliacao')"><i class="fa fa-star" title="2 Estrelas"></i></li>
+              <li onclick="setRating(1, 'avaliacao')"><i class="fa fa-star" title="1 Estrela "></i></li>
+            </ul>
+            <div class="form-group">
+                <label for="comment">Comentário:</label>
+                <textarea class="form-control" id="comment" name="comment" rows="4"></textarea>
+            </div>
+            <br>
+            <div class="d-flex justify-content-between">
+                <button type="submit" class="btn btn-dark roxo col-6">Salvar</button>
+                <button type="button" class="btn btn-dark azul col-6" data-dismiss="modal">Cancelar</button>
+            </div>
+            <input type="hidden" id="rating-avaliacao" name="rating" value="{% if new_rating %}{{ new_rating.rating }}{% endif %}">
+          </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Reavaliação-->
+<div class="modal fade" id="Reavaliacao" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="myModalLabel">Adicionar Avaliação</h5>
+      </div>
+      <div class="modal-body">
+          <form id="ratingFormReavaliacao" method="POST" action="{% url 'update_rating' slug=profile.slug %}">
+            
+            {% csrf_token %}
+            <ul class="btn btn-light list-inline rating-list" id="rating-list-reavaliacao">
+              <li onclick="setRating(5, 'reavaliacao')"><i class="fa fa-star" title="5 Estrelas"></i></li>
+              <li onclick="setRating(4, 'reavaliacao')"><i class="fa fa-star" title="4 Estrelas"></i></li>
+              <li onclick="setRating(3, 'reavaliacao')"><i class="fa fa-star" title="3 Estrelas"></i></li>
+              <li onclick="setRating(2, 'reavaliacao')"><i class="fa fa-star" title="2 Estrelas"></i></li>
+              <li onclick="setRating(1, 'reavaliacao')"><i class="fa fa-star" title="1 Estrela "></i></li>
+          </ul>
+          <div class="form-group">
+            <label for="comment">Comentário:</label>
+            <textarea class="form-control" id="comment" name="comment" rows="4">{{ form.instance.comment }}</textarea>
+          </div>
+            <br>
+            <div class="d-flex justify-content-between">
+                <button type="submit" class="btn btn-dark roxo col-6">Salvar</button>
+                <button type="button" class="btn btn-dark azul col-6" data-dismiss="modal">Cancelar</button>
+            </div>
+            <input type="hidden" id="rating-reavaliacao" name="rating" value="{{ form.instance.rating }}">
+          </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+  <script>
+    
+    
+    function setRating(rating, context) 
+    {
+        var listId = 'rating-list-' + context;
+        var stars = document.querySelectorAll('#' + listId + ' i');
+        for (var i = 0; i < stars.length; i++) 
+        {
+            if (i < 5 - rating) 
+            {
+              stars[i].classList.remove('checked');
+            } 
+            else 
+            {
+              stars[i].classList.add('checked');
+            }
+        }
+        document.getElementById('rating-' + context).value = rating;
+    }
+    
+  
+    </script>
+    
+
+{% endblock %}

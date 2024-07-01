@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+{% block content %}
+{% include "cards/menu_tarot.html" %}
+<br>
+<br>
+<h1 class="text-white text-center">{{ minor.name_minor_arcana }}</h1>
+<br>
+<br>
+
+
+
+    <div class="row">
+         <div class="text-center col-sm-12"> 
+            <img class="img-fluid major " src="{{ minor.image_minor.url }}" >
+        </div>
+    </div>
+
+    <div class="row mx-0">
+        <div class="col-sm-12 bg-white">
+           
+            <h5>Palavras Chave:</h5>
+            {% for tag in minor.key_word_minor.all %}
+            {{ tag }}<br>            
+            {% endfor %}
+            
+            <p class="text-dark text-center">{{ minor.description|safe }}</p>
+            
+        </div>
+    </div>
+    {% if minors %}
+<nav class="listminor">    
+    <ol>
+        {% for m in minors %}
+            <a href="{{ m.get_absolute_url }}" class="text-decoration-none">
+                <h4><li class="mb-4" style="color: yellow;">{{ m.name_minor_arcana }}</li></h4>
+            </a>        
+        {% endfor %}
+    </ol> 
+</nav>    
+{% endif %}
+
+
+{% endblock %}

@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block content %}
+<script> 
+  function confirmarExclusao(url) 
+  {
+    if (confirm("Deseja realmente excluir este Artigo?")) 
+    {
+      window.location.href = url; 
+    }
+  }
+</script>
+
+{% include "account/profile_menu.html" %}
+
+<br>
+<br>
+<br>
+<h1 class="text-center text-white">Meus Artigos</h1>
+<br>
+<br>
+<br>
+
+<section>
+  <div class="container-fluid">
+    <div class="row">
+    {% if posts %}
+      {% for post in posts %}  
+        <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-sm-12 col-12 mb-4">
+          <a href="{{ post.get_absolute_url }}" class="card-link text-decoration-none">
+            <div class="card mx-auto">
+              <img class="card-img-top img-fluid" src="{{ post.image.url }}" alt="{{ post.title }}" style="max-height: 200px; object-fit: cover;">
+              <div class="card-body">
+                <h5 class="card-title">{{ post.title |truncatewords:20}}</h5>
+                <p class="card-text">
+                    Categoria: {{ post.category }}<br>
+                    Por: {{ post.user_post }}<br>             
+                    <small class="text-muted">{{ post.created }}</small>
+                  </p>
+                               
+              </div>
+              <div class="card-footer">
+                <br>
+                <a href="{% url 'edit_post' year=post.created.year month=post.created.month day=post.created.day  id=post.id post=post.slug %}" class="btn btn-dark roxo col-6">Editar</a>
+                <button class="btn btn-dark azul col-6" onclick="confirmarExclusao('{% url 'delete_post' year=post.created.year month=post.created.month day=post.created.day  id=post.id post=post.slug %}')">Excluir</button>
+              </div>
+            </div>          
+          </a>
+        </div>
+      {% endfor %}
+      {% else %}
+      <h4 class="text-white text-center">Você não possue nenhum artigo!</h4>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+<style>
+    .card-footer {
+        height: 70px; /* Defina a altura desejada */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.75rem;
+    }
+    .card-footer button {
+        width: calc(50% - 5px); /* Divide o espaço disponível em duas colunas */
+    }
+</style>
+
+{% endblock %}

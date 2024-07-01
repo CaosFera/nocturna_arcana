@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block content %}
+
+<br>
+<br>
+<br>
+<div class="container contribuir">
+    <div class="text-center">
+        <h1 class="text-center text-white">NOS AJUDE A CRESCER</h1>
+        <br>
+        <br>
+        <h2 class="text-center text-white">Chave Pix:</h2>
+        <br>
+        <h3 id="chavePix" class="text-center text-white">2b5e706d-4c6a-4574-b731-0c156ede7508</h3>
+        <br>
+        <button id="copiarChave" class="btn btn-dark">Copiar Chave</button>
+    </div>
+</div>
+
+
+<script>
+    document.getElementById('copiarChave').addEventListener
+    ('click', function()
+        {
+            var chavePix = document.getElementById('chavePix');
+            var textoParaCopiar = chavePix.innerText;
+
+            // Cria um elemento de input para inserir o texto a ser copiado
+            var inputTemporario = document.createElement('input');
+            inputTemporario.setAttribute('value', textoParaCopiar);
+            document.body.appendChild(inputTemporario);
+
+            // Seleciona e copia o texto dentro do input temporário
+            inputTemporario.select();
+            document.execCommand('copy');
+
+            // Remove o input temporário
+            document.body.removeChild(inputTemporario);
+
+            // Alerta que a chave foi copiada
+            alert('Chave Pix copiada, Obrigado!');
+        }
+    );
+</script>
+
+{% endblock %}

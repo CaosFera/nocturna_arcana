@@ -1,0 +1,381 @@
+{% extends "base.html" %}
+{% block content %}
+{% include "cards/menu_tarot.html" %}
+<br>
+<br>
+<br>
+
+  
+    <h1 class="text-white text-center">O Tarô na História</h1>
+    <p class="text-center text-white">(Texto extraído do livro Tarô, a Sorte pelas Cartas - Arthur E. Waite)</p>
+    {% for item in img %}
+    <div class="text-center">   
+        {% if img3 %}     
+        <img src="{{ item.img3.url }}" class="img-fluid image_tarot">
+        {% endif %}
+    </div>
+{% endfor %}
+
+    <br>
+    <br>
+<div class=" text-container text-justify recuo-primeira-linha container-fluid text-white">                     
+    <h4>
+        O nosso próximo objetivo é falar das cartas no que diz respeito à sua
+        história, de modo que as especulações e fantasias que se perpetuaram e se
+        multiplicaram nas escolas das pesquisas ocultistas possam ser postas de lado de
+        uma vez por todas, como prometi no prefácio deste livro.<br>
+        <span class="recuo">Deve</span> ficar entendido logo que há vários conjuntos ou seqüências de cartas
+        antigas que apenas em parte nos interessam. O Tarô dos Boêmios, de
+        Papus, revendo a interpretação imperfeita, traz algumas informações úteis sem tal
+        sentido, e, a não ser pela omissão de datas e de outras provas de natureza
+        arqueológica, servirá ao objetivo para o leitor comum. Não pretendo aqui ampliá-lo
+        de maneira que possa ser chamado de considerável, mas são necessários certos
+        acréscimos, assim também como um modo diferente de apresentação.<br>
+        <span class="recuo">Entre</span> as cartas antigas que são mencionadas com relação ao Tarô, há
+        primeiramente as de Baldini, que constituem o célebre conjunto atribuído
+        pela tradição a Andrea Mantegna, embora esse ponto de vista seja hoje geralmente
+        rejeitado. Supõe-se que a sua data esteja em torno de 1470, e acredita-se que não
+        haja mais de quatro coleções restantes na Europa. Uma cópia ou reprodução suposta
+        ser de 1485 é talvez igualmente rara. O conjunto completo contém cinqüenta
+        números, divididos em cinco denários ou seqüências de dez cartas cada uma. Não
+        parece haver indícios de que eram usadas para algum jogo, de azar ou de habilidade;
+        dificilmente poderiam ser usadas para a adivinhação ou
+        qualquer forma de leitura de sorte; seria mais do que ocioso atribuir um profundo
+        significado simbólico aos seus desenhos evidentemente emblemáticos. O primeiro
+        denário abrange Condições de Vida, como se segue: (1) o Mendigo, (2) o Vilão, (3) o
+        Artesão, (4) o Mercador, (5) o Nobre, (6) o Cavaleiro, (7) o Doge, (8) o Rei, (9) o
+        imperador, (10) o Papa. O segundo contém as Musas e o seu Chefe Divino: (11)
+        Calíope, (12) Urânia, (13) Terpsícore, (14) Erato, (15) Polínia, (16) Tália, (17)
+        Melpôneme, (18) Euterpe, (19) Cio, (20) Apoio. O terceiro combina parte das Artes e
+        Ciências Liberais com outros setores da sabedoria humana, como se segue: (21)
+        Gramática, (22) Lógica, (23) Retórica, (24) Geometria, (25) Aritmética, (26) Música,
+        (27) Poesia, (28) Filosofia, (29) Astrologia, (30) Teologia. O quarto denário completa as
+        Artes Liberais e enumera as Virtudes: (31) Astronomia, (32) Cronologia, (33)
+        Cosmologia, (34) Temperança, (35) Prudência, (36) Fortaleza, (37) Justiça, (38)
+        Caridade, (39) Esperança, (40) Fé. O quinto e último denário apresenta o Sistema dos
+        Céus: (41) Lua, (42) Mercúrio, (43) Vênus, (44) Sol, (45) Marte, (46) Júpiter, (47)
+        Saturno, (48) Oitava Esfera, (49) Primum  Mobile, (50) Primeira Causa.<br>
+        <span class="recuo">Devemos</span> pôr de lado as fantásticas tentativas de extrair completas seqüências
+        do Tarô desses denários; não devemos dizer,  por exemplo, que as Condições de Vida
+        correspondem aos Trunfos Maiores, as Musas aos Pentáculos, as Artes e Ciências a
+        Copas, as Virtudes, etc. a Paus e as condições de vida a Espadas.                   
+    </h4>             
+</div>      
+<br>   
+<div class=" text-container text-justify container-fluid text-white">
+    
+        <h4>
+             Esse tipo de  coisa pode ser feita por um processo de
+            contorção mental, mas que não tem lugar na realidade. Ao mesmo tempo, é difícil
+            que as cartas individuais não apresentem certas, e mesmo gritantes, analogias. O
+            Rei, Cavaleiro e Vilão de Baldini sugerem as cartas de corte correspondentes dos
+            Arcanos Menores. O Imperador, Papa, Temperança, Força, Justiça, Lua e Sol são
+            comuns às cartas de Mantegna e aos Arcanos Maiores de qualquer baralho de
+            Tarô. Há também a tendência de relacionar-se o Mendigo e o Bobo, Vênus
+            e a Estrela, Marte e o Carro, Saturno e o Ermitão, mesmo Júpiter, ou a alternativa
+            da Primeira Causa, com a carta do Mundo do Tarô. (1) As mais destacadas feições
+            dos trunfos Maiores, contudo, faltam na série de Mantegna, e não acredito que a
+            seqüência bem ordenada da última tenha originado outras. Romain Merlin sustenta
+            esse ponto de vista, e atribui positivamente as cartas de Baldini ao fim do século XIV.<br>
+            <span class="recuo">Se</span> se admitir que, a não ser acidental e esporadicamente, as figuras
+            emblemáticas ou alegóricas de Baldini têm apenas uma pálida e ocasional conexão
+            com as cartas do Tarô, e qualquer que seja a sua data mais provável, não podendo ter
+            oferecido qualquer motivo originador, segue-se que ainda estamos procurando
+            não apenas uma origem no lugar e no tempo para os símbolos pelos quais
+            estamos interessados, como também o caso específico de sua manifestação no
+            continente europeu, para servir de ponto de partida, seja para trás, seja para diante.
+            Ora, é bem sabido que no ano de 1393 o pintor Charles Gringonneur
+            — que, por motivos que não sei quais sejam, foi chamado de adepto do ocultismo e da
+            cabala por um escritor inglês indiferente — desenhou e iluminou algumas espécies de
+            cartas para diversão de Carlos VI da França, quando este se encontrava sofrendo das
+            faculdades mentais, e surge a questão de se saber se algo pode ficar esclarecido sobre a
+            natureza das mesmas. A única resposta que se tem é que, em Paris, na Bibliothéque du
+            Roi, há dezessete cartas desenhadas e iluminadas em papel. São belíssimas,
+            antiguidades de valor inestimável; as figuras têm um fundo de ouro e uma orla de prata;
+            não são, porém, acompanhadas por nenhuma inscrição ou nenhum número.<br>
+            <span class="recuo">E</span> certo, de qualquer maneira, que incluem os Trunfos Maiores do Tarô, cuja
+            lista é a seguinte: Bobo, Imperador, Papa, Amantes, Roda da Fortuna, Temperança,
+            Fortaleza, Justiça, Lua, Sol, Carro, Ermitão, Enforcado, Morte, Torre e Juízo Final. Há
+            também quatro cartas de Tarô no Musée Carrer, em Veneza e cinco outras alhures,
+            fazendo um total de nove. Incluem dois Pajens ou Valetes, três Reis e duas Damas,
+            ilustrando assim os Arcanos Menores. Essas coleções foram todas identificadas com o
+            jogo produzido por Gringonneur, mas a imputação foi contestada até o ano de 1848,
+            e, segundo parece, não foi apresentada em nossos dias, mesmo por aqueles que se
+            mostram mais interessados em evidenciar a antigüidade do Tarô. Sustenta-se que todas
+            são de origem italiana e algumas, pelo menos, sem dúvida de origem veneziana.
+                   
+        </h4>
+    
+</div>  
+<br>
+<div class=" text-container text-justify container-fluid text-white">                     
+    <h4>
+        Tem-se sustentado mais com autoridade que o Tarô veneziano constitui a             
+        forma mais antiga e verdadeira, que é o pai de todos os outros; eu deduzo, porém, que
+        jogos completos de Arcanos Maiores e Menores pertencem a períodos muito
+        posteriores. Acredita-se que o baralho consistia de setenta e oito cartas.
+        Não obstante, porém, a preferência mostrada pelo Tarô veneziano, sabe-se que
+        algumas porções de um baralho minciano ou florentino remontam àquele período,
+        entre 1413 e 1418. Estiveram elas em poder da Condessa Gonzaga, em Milão.
+        Um baralho minciano completo, contendo noventa e sete cartas, e a despeito desses
+        vestígios, é considerado, falando-se de um modo geral, como evolução posterior. Há
+        quarenta e um Trunfos Maiores, sendo os números adicionais copiados da série
+        emblemática de Baldini ou nela inspirados. Nas cartas da corte dos Arcanos Menores,
+        os Cavaleiros são monstros do gênero centauro, enquanto os Valetes ora são
+        guerreiros, ora serviçais. Outra diferença reside na predominância de idéias
+        medievais cristãs e completa ausência de qualquer sugestão oriental. Resta, todavia,
+        a questão de se saber se há vestígios orientais em quaisquer cartas do Tarô.<br>
+        <span class="recuo">Chegamos</span>, enfim, ao Tarô Bolonhês, às vezes considerado como veneziano e
+        tendo os Trunfos Maiores completos, mas os números 20 e 21 são trocados de ordem.
+        Nos Arcanos Menores, o 2, o 3, o 4 e o 5 das cartas pequenas são omitidos, do que
+        resulta que há sessenta e duas cartas ao todo. A terminação dos Trunfos Maiores
+        na representação do Juízo Final é curiosa, e um tanto impressionante como um ponto
+        de simbolismo; isso, porém, é tudo que  parece necessário observar a respeito do
+        baralho de Bolonha, a não ser que se diz ter sido ele inventado — ou, como um
+        Tarô, mais corretamente, modificado — no começo do Século XV, por um Príncipe de
+        Pisa exilado, residente naquela cidade.<span class="recuo"> A</span> finalidade para a qual era usado parece
+        bastante evidente pelo fato de ter, em 1423, São Bernardino de Sienna pregado contra o
+        jogo de cartas e outras formas de jogo. Quarenta anos depois, no tempo do Rei
+        Eduardo do IV, foi proibida a importação de cartas pela Inglaterra. Essa é a primeira
+        menção certa acerca do assunto.<br> <span class="recuo">É</span> difícil examinar-se exemplos perfeitos
+        dos baralhos enumerados antes, mas não é difícil encontrarem-se descrições minuciosas
+        e ilustradas, e eu acrescentaria: contanto que o autor não seja ocultista, pois os relatos
+        emanando de tais fontes são habitualmente imperfeitos, vagos e preocupados com
+        considerações que obscurecem as questões críticas. Um exemplo disso é oferecido por
+        certos pontos de vista expressados com  relação ao códice de Mantegna, se é que
+        posso continuar a atribuir a cartas de baralho tal denominação. Tem-se estabelecido —
+        como vimos — que Apolo e as Nove Musas correspondem aos Pentagramas, mas a
+        analogia não provém de um trabalho de pesquisa; e o sonho deve se avizinhar do
+        pesadelo antes que possamos identificar a  Astronomia, a Cronologia e a Cosmologia
+        com o naipe de Copas. As figuras de Baldini que representam tais assuntos são emblemas
+        de seu tempo, e não símbolos, como o Tarô.<br> <span class="recuo">Em</span> conclusão a esta parte, devo
+        observar que tem havido uma tendência entre os especialistas de achar que os Trunfos
+        Maiores não estão originalmente relacionados com os naipes numerados. Não
+        pretendo apresentar um ponto de vista pessoal; não sou especialista em história dos
+        jogos de azar, e odeio o profanum vulgus dos recursos divinatórios; aventuro-me, porém, a
+        observar, com toda a reserva, que se, as recentes pesquisas justificam tal concepção
+        — exceto para a velha arte de ler a sorte e adulterar o chamado destino — será muito
+        melhor para os Arcanos Maiores.<br> <span class="recuo">Até</span> aqui, o que parece indispensável como preliminar 
+        aos aspectos históricos das cartas de Tarô; passarei agora ao lado especulativo do assunto 
+        e a apresentar os ensaios de avaliação.               
+    </h4>         
+</div> 
+<br>    
+<div class=" text-container text-justify container-fluid text-white">                     
+    <h4>
+        Em meu prefácio de o Tarô dos Boêmios, salientei que o primeiro escritor que tornou conhecido o caso das
+        cartas foi o arqueólogo Court de Gebelin, que, pouco antes da Revolução Francesa,
+        gastou vários anos com a publicação de seu Monde Primitif, que se estendeu por nove
+        volumes in quarto. Ele foi, em seu tempo, um erudito, maçom de grau elevado,
+        membro da histórica Loja dos Philalethes e  um virtuoso com profundo e permanente
+        interesse no debate sobre as antigüidades universais, antes que existisse uma ciência
+        sobre o assunto. Ainda hoje, os seus  memoriais e as suas dissertações, coligidas
+        sob o título que citei, merecem atenção. Por um acaso, ele travou conhecimento com o
+        Tarô que era então inteiramente desconhecido em Paris, e imediatamente
+        concebeu a idéia de que se tratava de remanescentes de um livro egípcio.
+        Realizou pesquisas a propósito e verificou que o Tarô circulava em uma parte
+        considerável da Europa — Espanha, Itália, Alemanha e Sul da França. Era usado como
+        jogo de azar ou de habilidade, segundo o modo habitual de jogar cartas; e verificou
+        mais como se jogava. Também era usado, contudo, para a finalidade mais elevada de
+        adivinhação ou leitura da sorte, e, com a ajuda de um amigo erudito, Court de Gebe-
+        lin, descobriu a significação atribuída às cartas, juntamente com o método de arranjo
+        adotado para esse fim. Em uma palavra, foi valiosa a sua contribuição para o nosso
+        conhecimento, e ainda constitui uma fonte  de referência, mas apenas como questão de
+        fato, e não na sua querida hipótese de que o Tarô contém a pura doutrina egípcia. Ele,
+        contudo, criou a opinião que prevalece até os nossos dias, por intermédio das escolas
+        do ocultismo, segundo a qual estava perdida a origem das cartas, no mistério e, portanto, na estranha noite dos
+        deuses, na língua estranha e nos hieróglifos não decifrados que simbolizavam o Egito no
+        fim do Século XVIII. Assim sonhava um dos característicos literatos da França, e até
+        podemos compreender e simpatizar com ele, pois o país do Delta e do Nilo estava
+        começando a ocupar ampla-mente a curiosidade dos eruditos, e omne ignotum
+        pro AEgyptiaco era o caminho da ilusão  para o qual rumavam aqueles espíritos.
+        Então, era bastante desculpável, mas não há desculpa para o fato de haver continuado a
+        loucura e, dentro do círculo encantado das ciências ocultas, ainda ser transmitida de
+        boca em boca. Vejamos, pois, as provas apresentadas por M. Court de Gebelin a
+        favor de sua tese, que procurarei resumir, tanto quanto possível, com as suas próprias
+        palavras.<br> <span class="recuo">(1)</span> As figuras e disposição do jogo são manifestamente alegóricas; (2) as alegorias
+        estão na conformidade da doutrina civil, filosófica e religiosa do antigo Egito; (3) se
+        as cartas fossem modernas, nenhuma Alta  Sacerdotisa estaria incluída entre os Arcanos
+        Maiores; (4) a figura em questão traz os chifres de Ísis; (5) a carta chamada o
+        Imperador tem um cetro que termina com uma tríplice cruz; (6) a carta intitulada a
+        Lua, que é Ísis, mostra gotas de chuva ou orvalho no ato de serem derramadas pela
+        luminária, e tais gotas são — como vimos — as lágrimas de Ísis, que encheram as
+        águas do Nilo e fertilizaram os campos do Egito; (7) a décima sétima carta, ou Estrela,
+        é Sírio, que foi consagrada a Ísis e simboliza o começo do ano; (8) o jogo jogado com o
+        Tarô se baseia no número sagrado sete, que tinha grande importância no Egito; (9) a
+        palavra Tarô é pura-mente egípcia: no idioma egípcio, Tar = estrada ou caminho,
+        Ro = rei ou real, e Tarô significa, portanto, Estrada Real da Vida; (10) alternativamente,
+        deriva de A = doutrina; Rosh = Mercúrio = Tot, e o artigo T em suma, Tarosh; e, portanto,
+        o Tarô é o Livro de Tot, ou o Quadro da Doutrina de Mercúrio.<br> <span class="recuo">Tal</span> é o testemunho, ficando 
+        entendido que deixei de lado várias afirmações fortuitas, sem qualquer espécie de justificativa.            
+    </h4>            
+</div>   
+<br>
+<div class=" text-container text-justify container-fluid text-white">                     
+    <h4>
+        São, portanto, dez as colunas que sustentam o edifício da tese, e são
+        colunas de areia. O Tarô é, sem dúvida, alegórico — quer dizer, é simbolismo —
+        mas as alegorias e símbolos são católicos — pertencem a todos os países, todas as nações
+        e todos os tempos: não são mais egípcios do que mexicanos; são da Europa e de Catai, do
+        Tibete além do Himalaia e das sarjetas de  Londres. Como alegoria e símbolo, as cartas
+        correspondem a muitos tipos de idéias e de coisas; são universais e não particulares; e o
+        fato de que não correspondem especial e peculiarmente à doutrina egípcia —
+        religiosa, filosófica ou civil — se torna claro pela impossibilidade de Court de Gebelin ir
+        além de uma simples afirmação. A presença de uma Alta Sacerdotisa entre os Trunfos
+        Maiores se explica mais facilmente como lembrança de alguma antiga superstição, o
+        culto de Diana, por exemplo, cuja persistência na Itália moderna tem sido
+        exposta com notáveis resultados por Leland. Também devemos lembrar a universalidade
+        dos chifres em todos os cultos, sem excetuar os do Tibete. A tríplice cruz é despicienda
+        como exemplo do simbolismo egípcio; é a cruz da sé patriarcal, tanto grega como latina
+        — de Veneza e Jerusalém, por exemplo — e é a forma de persignação usada até hoje por
+        sacerdotes e leigos no rito ortodoxo. Deixo de lado a ociosa alusão às lágrimas de Isis,
+        porque outros autores ocultistas nos têm dito que se trata de Jods hebraicos; no que diz
+        respeito à décima sétima carta, trata-se da estrela Sírio ou de outra que se prefira; o
+        número sete era sem dúvida importante no Egito, e qualquer tratado sobre o misticismo
+        mostrará que o mesmo se aplica em toda a parte, mesmo se preferirmos ignorar os sete Sacramentos
+        Cristãos e os sete Dons do Espírito Santo. Finalmente, no que diz respeito à
+        etimologia da palavra Tarô, é bastante observar que ela foi oferecida antes da
+        descoberta da Pedra de Rosetta e quando nada se conhecia sobre o idioma egípcio.<br>
+        <span class="recuo">A</span> tese de Court de Gebelin não foi perturbada no espírito da época, tendo
+        apelado para os homens cultos exclusivamente por meio de um quarto
+        volume. Deu uma oportunidade às cartas do Tarô em Paris, como centro da França e de
+        todas as coisas francesas no universo. A sugestão é de que a adivinhação por meio
+        de cartas tinha a apoiá-la a inesperada garantia da antiga ciência oculta, e que a
+        raiz de tudo se encontrava nas maravilhas e mistério do Egito refletiram-se quase que
+        como uma dignidade divina; dos limites da prática oculta da cartomancia saiu para
+        entrar na moda e assumiu no momento feição quase pontifical. O primeiro a tomar o
+        papel de bateleur, mágico e prestidigitador, foi um iletrado mas zeloso aventureiro,
+        Alliette; em segundo lugar, como uma espécie de Alta Sacerdotisa, cheia de
+        intuição e revelações, apresentou-se Mlle. Lenormand, mas essa pertence a um
+        período posterior; enfim, surgiu Julia Orsini, mais semelhante a uma Rainha de
+        Copas do que a uma portadora de clarividência. Não me interesso por essas
+        pessoas como leitoras da sorte, quando o próprio destino se encarregava de
+        embaralhar e distribuir as cartas no jogo universal da revolução, ou por cortes e
+        cortesãos como os de Luís XVIII, Carlos X e Luis Felipe. Mas sob a designação oculta
+        de Etteilla, anagrama de seu nome, Alliette, aquele perruquier levou em consideração a
+        si mesmo com muita seriedade e apresentou-se mais como um sacerdote de
+        ciências ocultas do que como um entendido comum em l’art de tirer les cartes. 
+    </h4>        
+</div>   
+<br>
+<div class=" text-container text-justify container-fluid text-white">                     
+    <h4>
+        Até hoje há gente, como o Dr. Papus, que pensa salvar do esquecimento uma parte daquele bizarro
+        sistema.<br> <span class="recuo">O</span> longo e heterogêneo relato de Le Monde Primitif foi terminado em 1782; em
+        1783 as páginas de Etteilla começaram a ser  publicadas, atestando que ele já gastara
+        trinta, ou melhor, quase quarenta anos, no estudo da magia egípcia, e que encontrara
+        afinal as chaves. Eram, de fato, as Chaves do Tarô, que eram um livro de filosofia e o
+        Livro de Tot, mas ao mesmo tempo fora realmente escrito por dezessete Magos em
+        um Templo de Fogo, nos limites do Levante, a cerca de três léguas de Mênfis. Continha a
+        ciência do universo, e o cartomante tratava de aplicá-lo à Astrologia, Alquimia e leitura
+        da sorte, sem a mais leve hesitação ou reserva em revelar que visava a uma
+        atividade lucrativa. Não tenho dúvida, realmente, de que o considerava como um
+        métier legítimo, e que ele próprio foi a primeira pessoa que convenceu a respeito de
+        seu sistema. Mas o que quero salientar é que, a partir daquele modo, a antigüidade do
+        Tarô foi geralmente trombeteada. Os livrinhos de Etteilla constituem uma prova
+        cabal de que ele não conhecia sequer o seu próprio idioma; quando, com o decorrer do
+        tempo, publicou um Tarô reformado, mesmo aqueles que o encaram com a maior simpatia
+        admitiram que ele deturpara o seu simbolismo; e, no que diz respeito à
+        antiguidade, ele tinha apenas Court de Gebelin como a sua autoridade universal.<br>
+        <span class="recuo">Os</span> cartomantes sucederam-se uns aos outros do modo que mencionei, e houve,
+        naturalmente, adeptos rivais desses mistérios  diminutos; mas os estudos sérios sobre o
+        assunto, se se pode dizer que existem, baseiam-se todos no volume in-quarto de
+        Court de Gebelin há algo mais de sessenta anos. Por sua autoridade, não se pode
+        duvidar que quem travou conhecimento, na teoria ou na prática, por acaso ou
+        intencionalmente, com a questão das cartas de Tarô, aceitou o seu caráter egípcio. Tem-se
+        dito que as pessoas são geralmente aceitas pelo que dizem de si mesmas, e —
+        seguindo, como acontece, a linha da menor resistência — a mentalidade geral pouco
+        especulativa aceita as pretensões arqueológicas mais ousadas e aqueles que
+        as sustentam. O primeiro que se apresentou para reconsiderar o assunto com algumas
+        credenciais foi o escritor francês Duchesne, mas sou obrigado a deixá-lo de lado com
+        uma simples referência, e assim também algumas interessantes pesquisas sobre o
+        assunto geral de cartas de jogar por Singer, na Inglaterra. Esse último acreditava que o
+        velho jogo veneziano chamado Trappola foi a forma européia mais antiga de jogos
+        de carta, que sua origem era árabe e que as cinqüentas e duas cartas usadas derivam
+        daquela região. Não creio que qualquer importância tenha tido esse ponto de vista.<br>
+        <span class="recuo">Duchesne</span> e Singer foram seguidos por outro autor inglês, W. A. Chatto, que reviu
+        os fatos disponíveis e a onda de especulações já provocada pelo assunto.
+        Isso ocorreu em 1848, e a sua obra ainda teve uma certa autoridade, mas — a não ser
+        algumas observações corretas atribuíveis ao seu espírito independente — o resultado é
+        medíocre ou mesmo fraco. Foi, contudo, característico em sua maneira de apreciar a
+        incerteza do Século XIX. Chatto rejeitou a hipótese egípcia, mas, como pouco se
+        preocupou com ela, dificilmente poderia desbancar Court de Gebelin, se esse último
+        tivesse qualquer terreno sólido para apoiar a sua hipótese. Em 1854, outro escritor
+        francês, Boiteau, encarou a questão em geral, sustentando a origem oriental das
+        cartas do Tarô, embora sem tentar prová-la. Não tenho certeza, mas creio que ele foi o
+        primeiro autor que as identificou com os ciganos; para ele, contudo, o lar original
+        dos ciganos era a Índia, e o Egito não entrava, portanto, em seus cálculos.                
+    </h4>           
+</div> 
+<br>
+<div class=" text-container text-justify recuo-primeira-linha container-fluid text-white">                     
+    <h4>
+        Em 1860, surgiu Eliphas Lévi, um brilhante e profundo illuminé, que é
+        impossível aceitar e ainda mais impossível rejeitar. Jamais houve uma boca declarando
+        tão grandes coisas, de todas as vozes ocidentais que proclamaram ou
+        interpretaram a ciência chamada oculta e a doutrina chamada mágica. Parece-me que,
+        fundamentalmente falando, ele se preocupava tanto e tão pouco quanto eu pela
+        parte fenomenal, mas explicava os fenômenos com a segurança de alguém que
+        abertamente admitia ser o charlatanismo um grande meio para um determinado fim, se
+        usado em prol de uma causa justa. Ele se apresentou e se acreditou, também por sua
+        própria avaliação, como um homem de grande saber — que nunca foi — e como
+        revelador de todos os mistérios, sem ter sido iniciado em nenhum. Creio jamais ter
+        havido exemplo de um escritor com grandes dons, em sua peculiaridade, que os tenha
+        utilizado de maneira tão medíocre. Afinal de contas, ele era apenas Etteilla encarnado
+        pela segunda vez, dotado em sua transmutação de uma boca de ouro e de um
+        conhecimento casual mais vasto. Não obstante isso, ele escreveu a mais completa,
+        brilhante e agradável História da Magia jamais escrita em qualquer idioma. Levou
+        muito a sério o Tarô e a hipótese de Gebelin, e toda a França ocultista e a Grã-Bretanha
+        esotérica, martinistas, cabalistas semi-instruídos, escolas de soi disant teosofia —
+        aqui, ali e acolá — aceitaram o seu juízo a respeito com a mesma confiança com que
+        aceita-ram as suas interpretações dos grandes clássicos da Cabala, pelos quais
+        antes passou os olhos do que os leu. Para ele, o Tarô era não somente o mais perfeito
+        instrumento de adivinhação e a pedra angular da ciência oculta, como também o
+        livro primitivo, o único livro dos antigos Magos, o volume milagroso que inspirou
+        todos os escritos sagrados da Antigüidade. Em sua primeira obra, todavia, Lévi se
+        contentou em aceitar a construção de Court de Gebelin e reproduzir o sétimo Trunfo Maior com
+        umas poucas características egípcias. A questão da transmissão do Tarô através dos
+        ciganos não o preocupou, até que J. A. Vaillant, um bizarro escritor com grande
+        conhecimento do povo cigano, levantou a hipótese em suas obras sobre aquelas tribos
+        errantes. Os dois autores quase coincidiram e refletiram um ao outro, de então para
+        diante. Coube a Romain Merlin, em 1869, salientar o que deveria ser evidente, isto é,
+        que cartas de baralho de alguma espécie eram conhecidas na Europa antes da
+        chegada dos ciganos, cerca de 1417. Mas, como essa foi a data de sua chegada a
+        Luneburg, e como a sua presença pode ser assinalada anteriormente, a correção perdeu
+        grande parte de sua força; o mais seguro, portanto, é dizer que as provas do uso do
+        Tarô pelas tribos ciganas só foram apresentadas depois do ano de 1840; o fato
+        de alguns ciganos, antes daquele tempo, terem sido encontrados usando as cartas é
+        perfeitamente explicável, admitindo-se a hipótese, não de que eles as tenham trazido
+        para a Europa, e sim de que já as encontraram ali e as adotaram.<br><span class="recuo">Já</span> vimos que não há a menor prova da
+        origem egípcia das cartas de Tarô. Olhando-se em outras direções, observou-se certa vez
+        que cartas de algum tipo foram inventadas na China, cerca do ano de 1120 da nossa era.
+        Court de Gebelin acreditava, em seu entusiasmo, que as descobrira em uma
+        inscrição chinesa considerada antiqüíssima, que se dizia refletir-se ao abaixamento das
+        águas do Dilúvio. Os caracteres de tal inscrição estavam contidos em setenta e sete
+        compartimentos, e isso constitui a analogia. 
+    </h4>            
+</div> 
+<br>
+<div class=" text-container text-justify container-fluid text-white">  
+    <h4>
+        A Índia também teve as suas tabuletas, fossem cartas ou outras coisas, o que sugeriu 
+        também semelhanças igualmente tênues. Mas a existência, por exemplo, de dez seqüências 
+        ou estilos, de doze números cada um, e representando os                
+        avatares de Vixnu, como um peixe, uma tartaruga, um javali, um leão, um macaco,
+        um guarda-chuva ou um arco, assim como um bode, uma tenda e um cavalo, não vai
+        nos ajudar a descobrir a origem dos nossos próprios Trunfos Maiores, nem coroas e
+        harpas — nem mesmo a presença de possíveis moedas como sinônimos de
+        dinheiros e talvez como um equivalente de pentagramas — contribuíram sensivelmente
+        para elucidar os Arcanos Menores. Se todos os idiomas, povos, regiões e épocas
+        possuíram suas cartas — se também com elas filosofaram, adivinharam e jogaram — o
+        fato seria bastante interessante, mas a não ser que fossem cartas do Tarô, o fato
+        só denotaria a tendência universal do homem de buscar as mesmas coisas mais ou
+        menos da mesma maneira.<br> <span class="recuo">Termino</span>, pois, a história desse setor repetindo que não há história anterior ao
+        Século XIV, quando se ouviram as primeiras informações referentes às cartas. E possível
+        que existissem há séculos, mas mesmo isso parece duvidoso, ainda que só fossem
+        usadas no jogo ou para prever o futuro; por outro lado, se continham indícios profundos
+        da Doutrina Secreta, o Século XIV parece cedo demais, ou, pelo menos, a esse respeito
+        não podemos saber grande coisa.               
+    </h4>           
+</div> 
+{% endblock %}
