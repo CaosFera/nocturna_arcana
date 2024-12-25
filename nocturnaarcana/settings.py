@@ -23,7 +23,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-2nhs5_#pdxr^m8_1@jc4!&@y-ewc_#amblcl*m&r*qtib+)0rt'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True    
 
 ALLOWED_HOSTS = ['*']
 
@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'ckeditor',    
     'stdimage',
     'coverage',
+    
 ]
 
 
@@ -87,17 +88,15 @@ WSGI_APPLICATION = 'nocturnaarcana.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'nocturnaarcana',
-        'USER': 'root',
-        'PASSWORD': 'S@mael666',
-        'HOST': 'localhost',  
-        'PORT': '3306',      
-        'OPTIONS': {
-            'charset': 'utf8mb4', 
-        },
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'nocturnaarcana',  
+        'USER': 'root',       
+        'PASSWORD': 'root',   
+        'HOST': 'localhost',       
+        'PORT': '5432',           
     }
 }
+
 
 
 # Password validation
@@ -135,8 +134,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
 
-STATIC_URL = 'static/'
-MEDIA_URL =  'media/'
+STATIC_URL = '/static/'
+MEDIA_URL =  '/media/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
@@ -175,14 +174,3 @@ AUTHENTICATION_BACKENDS = [
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 
-# CKEDITOR_CONFIGS = {
-#     'default': {
-#         'toolbar': [
-#             ('Source', '-'),
-#             {'name': 'codesnippet', 'items': ['CodeSnippet']},
-#             ...
-#         ],
-#         'width': 'auto',
-#         'extraPlugins': ['codesnippet'],
-#     },
-# }
